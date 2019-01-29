@@ -1,0 +1,7 @@
+{
+  "name": "autogovMob",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
