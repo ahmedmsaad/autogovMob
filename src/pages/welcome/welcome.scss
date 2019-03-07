@@ -1,0 +1,28 @@
+page-welcome {
+    $background:#46529d;
+    $butoon:#2ebaee;
+
+    .welcomebody{
+        text-align: center;
+        background-color: $background;
+    }
+    .logo{
+        height: 100px;
+        width: 70%;
+        margin: 20%;
+        margin-top:40%
+    }
+    .button{
+        width: 46%;
+        display: grid;
+        margin: auto;
+        margin-top: 25px;
+        font-size: 25px;
+        background: none;
+        box-shadow: none;
+        border-radius: 5px;
+        border: 1px solid #2ebaee;
+
+    }
+
+}
