@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BuildingLicensePage } from '../building-license/building-license';
+import {ReqinfoDataProvider} from'../../providers/reqinfo-data/reqinfo-data';
 /**
  * Generated class for the ReqinfoPage page.
  *
@@ -14,11 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReqinfoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public ReqinfoService :ReqinfoDataProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ReqinfoPage');
+    this.ReqinfoService.load();
   }
+  Choice( id)
+  {
+    console.log("done");
+    if(id.is("تراخيص بناء "))
+    {
+      this.navCtrl.push(BuildingLicensePage)
+
+    }else
+    {
+
+    }
+  }
+  gotoBuildingLicense(){
+    console.log("done");
+    this.navCtrl.push(BuildingLicensePage)
+  }
+  
 
 }

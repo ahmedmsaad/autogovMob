@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ListPage } from '../pages/list/list';
 
+
 @Component({
   templateUrl: 'app.html'
 })

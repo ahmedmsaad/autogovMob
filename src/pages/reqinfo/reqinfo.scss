@@ -1,3 +1,21 @@
 page-reqinfo {
+    ion-title{
+        text-align: right;
+    }
+    .button{
+        display: grid;
+        margin: 10%;
+        
+        text-decoration:underline;
+    
+       
+    }
+    .button:hover{
+        color:green;
+
+    }
+    .button:active{
+        color:blue;   
+    }
 
 }

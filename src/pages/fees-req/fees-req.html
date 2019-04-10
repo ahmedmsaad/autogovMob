@@ -1,0 +1,27 @@
+<!--
+  Generated template for the FeesReqPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>الضريبة المطلوبة</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let Fees of FeesService.Fees">
+
+
+       <button ion-button color="light" item-end>  {{Fees.name}} </button>
+        <ion-label color="primary" item-end> {{Fees.value}} </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+ 

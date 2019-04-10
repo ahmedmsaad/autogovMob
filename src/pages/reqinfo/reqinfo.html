@@ -7,12 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>reqinfo</ion-title>
+    <ion-title>استعلامات</ion-title>
   </ion-navbar>
 
 </ion-header>
+<script>
+  function Choice(name)
+  {
+    if(name=="تراخيص بناء ")
+    {
+     return <a class="button" click="gotoBuildingLicense()">تراخيص بناء </a>;
+    }
 
+    else
+    {
+     return <a class="button" href="#">شكاوى </a>;
+
+    }
+
+  }
+  </script>
 
 <ion-content padding>
+   
+
+    <ion-list>
+        <ion-item *ngFor="let data of ReqinfoService.reqinfo_data">
+            {{data.name}}
+            <a class="button" (click)="gotoBuildingLicense(data.id)">تراخيص بناء </a>
+            <a class="button" href="#">شكاوى </a>
+          
+        </ion-item>
+      </ion-list>
+
+
+
 
 </ion-content>
