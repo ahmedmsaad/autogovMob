@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ReqinfoDetailsPage } from '../reqinfo-details/reqinfo-details';
+import {ReqinfoDataProvider} from'../../providers/reqinfo-data/reqinfo-data';
+
 /**
  * Generated class for the ReqinfoPage page.
  *
@@ -22,21 +25,20 @@ import { Storage } from '@ionic/storage';
 export class ReqinfoPage {
   mydata:any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
-    this.getAllDocuments().then((data) => {
+    this.ListAllRequests().then((data) => {
       this.mydata = data[1];
       console.log(this.mydata)
     })
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ReqinfoPage');
-  }
-  getAllDocuments(){
+  //ionViewDidLoad() {
+   // this.ReqinfoService.load();
+ // }
+  ListAllRequests(){
       return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
  
-        this.http.get(apiKey+'api/documents/get', {headers: headers})
+        this.http.get(apiKey+'api/requests/get', {headers: headers})
          .map(res => res.json())
          .subscribe(data => {
            resolve(data);
@@ -45,4 +47,10 @@ export class ReqinfoPage {
          }); 
       })
   }
+  openReq(req){
+    console.log("done");
+    this.navCtrl.push(ReqinfoDetailsPage,{req:req})
+    }
+  
+
 }

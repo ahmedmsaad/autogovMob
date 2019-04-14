@@ -15,13 +15,14 @@
 
 
 <ion-content class="welcomebody">
-  
-  <img class="logo" src="../../assets/imgs/light_logo.png" class="logo"/>
-
+  <div class="background"></div>
+  <img class="logo" src="../../assets/imgs/dark_logo.png" class="logo"/>
+  <div class="buttonsContainer">
   <ion-buttons end>
-    <button ion-button class="button" (click)="goToTransactions()">خدمات المواطنين</button>
+    <button ion-button class="button" (click)="goToTransactions()">  خدمات المواطنين   <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon> </button>
   </ion-buttons>
   <ion-buttons end>
-    <button ion-button class="button" (click)="goToLogin()">تسجيل الدخول</button>
+    <button ion-button class="button" (click)="goToLogin()">    تسجيل الدخول  <ion-icon class="icon" ios="ios-log-in" md="md-log-in"></ion-icon> </button>
   </ion-buttons>
+</div>
 </ion-content>

@@ -1,0 +1,20 @@
+page-documents-req {
+    *{
+        
+    }
+    ion-title{
+        text-align: right;
+    }
+    ion-list{
+        width: 100%;
+        text-align: right;
+        //border:2px solid red;
+    }
+    ion-items {
+        width: 100%;
+        display: grid;
+    }
+    .items{
+        text-align: right
+    }
+}

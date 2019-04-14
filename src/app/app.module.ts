@@ -9,10 +9,20 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
-import {ReqinfoPage} from '../pages/reqinfo/reqinfo'; 
+import {ReqinfoPage} from '../pages/reqinfo/reqinfo';
+import { SearchForReqPage } from '../pages/search-for-req/search-for-req';
+import {BuildingLicensePage} from '../pages/building-license/building-license';
+import {DocumentsReqPage}  from '../pages/documents-req/documents-req';
+import {FeesReqPage} from '../pages/fees-req/fees-req';
+import { ReqinfoDetailsPage } from '../pages/reqinfo-details/reqinfo-details';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DataProvider } from '../providers/data/data';
+import { FeesProvider } from '../providers/fees/fees';
+import { ReqinfoDataProvider } from '../providers/reqinfo-data/reqinfo-data';
+
 
 import { HttpModule } from '@angular/http'; 
 
@@ -23,7 +33,12 @@ import { HttpModule } from '@angular/http';
     ListPage,
     WelcomePage,
     LoginPage,
-    ReqinfoPage
+    ReqinfoPage,
+    SearchForReqPage,
+    BuildingLicensePage,
+    DocumentsReqPage,
+    FeesReqPage,
+    ReqinfoDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -38,12 +53,20 @@ import { HttpModule } from '@angular/http';
     ListPage,
     WelcomePage,
     LoginPage,
-    ReqinfoPage
+    ReqinfoPage,
+    SearchForReqPage,
+    BuildingLicensePage,
+    DocumentsReqPage,
+    FeesReqPage,
+    ReqinfoDetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider,
+    FeesProvider,
+    ReqinfoDataProvider
   ]
 })
 export class AppModule {}

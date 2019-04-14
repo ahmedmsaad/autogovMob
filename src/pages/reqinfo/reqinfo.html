@@ -7,31 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>reqinfo</ion-title>
+    <ion-title>استعلامات</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-
-  <div  *ngFor=" let item of mydata">
+  <ion-list>
+    <button ion-item class="buttonList" *ngFor="let item of mydata" (click)="openReq(item)">
+      {{item.request_name}}
+    </button>
+  </ion-list>
  
-
-
-    <ion-list >
-      <ion-item-sliding>
-        <ion-item>
-          
-          <h2> {{item.document_name}} </h2>
-
-   
-        </ion-item>
-      </ion-item-sliding>
-    </ion-list>
-  
-  </div>
-  
   
 
 
