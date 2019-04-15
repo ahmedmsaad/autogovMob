@@ -14,14 +14,17 @@
 
 
 
-<ion-content padding >
+<ion-content padding class="pageContent">
+    <div class="background1"></div>
+    <div class="background2"></div>
+  <div class="searchcontent">
+    <button ion-button (click)="showResult()">بحث</button>
+  
     <ion-item >
-        <ion-input placeholder="رقم المعاملة" type="text" ></ion-input>
-        <button ion-button color="light" item-end>ادخل رقم المعاملة</button>
-      </ion-item>
-      <br>
-      <button ion-button color="light"class ="RH" size="large" >بحث</button>
-
+      <ion-input placeholder="ادخل رقم المعاملة" type="text" [(ngModel)]="InstanceId" ></ion-input>
+    </ion-item>
+  </div>
+  
 </ion-content>
 
 

@@ -1,9 +1,61 @@
 page-home {
+    $background:white;
+    $butoon:#2ebaee;
+    .icon,.toolbar-title{
+        color: #3d507e;
+    }
+    .toolbar-background{
+        background: none;
+        
+    }
+    
     ion-title{
         text-align: right;
+        background:none;
+        color: #3d507e
     }
+    ion-button{
+        text-align: right;
+        color: #3d507e;
+        
+    }
+    
     .button{
-        display: grid;
-        margin: 10%
+        height: auto;
+        color: #3d507e;
+        margin-top: 25px;
+        font-size: 25px;
+        background: none;
+        box-shadow: none;
+        padding: 0
     }
+    .background{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: -70%;
+        border-radius: 100%;
+        margin-top: -57%;
+        z-index: -1;
+    }
+    .HomeContent{
+        text-align: center;
+        background-color: $background;
+    }
+    .buttonsContainer{
+        margin-top:45%; 
+    }
+    .icons{
+        background: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 4px;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 2px 3px 0px #8090df;
+        color: #889cff;
+        height:50px;
+        width: 50px;
+    }
+
 }

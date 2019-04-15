@@ -1,19 +1,68 @@
 page-search-for-req {
-   
-     .ri{
-         float: right;
-     }
+    $background:white;
+    .scroll-content{
+        overflow:hidden;
+    }
+    ion-title{
+        text-align: right;
+    }
+    .text-input-md {
+        text-align: right;
+        color: #3d507e;
+        background: none;
+    }
+    .item .item-block .item-md .item-input .ng-pristine ng-valid ng-touched{
+        height: 50px;
+        background: none;
+        color: #3d507e;
+       // border-bottom: 1px solid #3d507e;
 
-     .item{
-        float:right;
-     }
-     .RH{
-       
-        float: right;
+    }
+    .searchcontent{
+        display:flex;
+        background:none;
+        margin-top: 150px;
+        box-shadow: 0px 1px 15px 0px #bfc8f3;
+        border-bottom: 1px solid #3d507e;
 
-        position: relative;
-        left: -50%; /* or right 50% */
-        text-align: left;
-     }
+    }
+    .searchcontent button{
+        background:#3d507e;
+        color: white;
+        height: 50px;
+        width: 70px;
 
+    }
+    .item-innert:focus,.item-inner:active{
+        border: none
+    }
+    .background1{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: -116%;
+        border-radius: 100%;
+        margin-top: -57%;
+        z-index: -1;
+    }
+    .background2{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: 53%;
+        border-radius: 100%;
+        margin-top: 30%;
+        z-index: -1;
+    }
+    .pageContent{
+        text-align: center;
+        background-color: $background;
+    }
+
+
+}
+page-search-for-req:focus, page-search-for-req:active{
+    border: none
 }
