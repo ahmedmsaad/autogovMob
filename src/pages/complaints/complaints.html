@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ComplaintsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>شكاوى</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>شكاوى</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="pageContent">
+
+  <div class="background1"></div>
+  <div class="background2"></div>
+ 
+    <span class="searchcontent">
+      <ion-item>
+        <ion-input placeholder="ادخل رقم القومى" type="text" [(ngModel)]="CustomerNationalID" name="firstField"></ion-input>
+
+      </ion-item>
+    </span>
+
+    <span>
+
+      <ion-item>
+        <ion-label floating></ion-label>
+        <ion-textarea rows="15" cols="20" placeholder="ادخل  الشكوى"></ion-textarea>
+      </ion-item>
+      <button ion-button (click)="showResult()">تقديم الشكوى</button>
+
+    </span>
+</ion-content>

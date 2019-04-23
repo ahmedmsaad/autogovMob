@@ -22,7 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DataProvider } from '../providers/data/data';
 import { FeesProvider } from '../providers/fees/fees';
 import { ReqinfoDataProvider } from '../providers/reqinfo-data/reqinfo-data';
-
+import {ComplaintsPage} from '../pages/complaints/complaints';
 
 import { HttpModule } from '@angular/http'; 
 
@@ -38,7 +38,8 @@ import { HttpModule } from '@angular/http';
     BuildingLicensePage,
     DocumentsReqPage,
     FeesReqPage,
-    ReqinfoDetailsPage
+    ReqinfoDetailsPage,
+    ComplaintsPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ import { HttpModule } from '@angular/http';
     BuildingLicensePage,
     DocumentsReqPage,
     FeesReqPage,
-    ReqinfoDetailsPage
+    ReqinfoDetailsPage,
+    ComplaintsPage
   ],
   providers: [
     StatusBar,

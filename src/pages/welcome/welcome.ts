@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
+import { ComplaintsPage } from '../complaints/complaints';
 
 /**
  * Generated class for the WelcomePage page.
@@ -25,6 +26,10 @@ export class WelcomePage {
   }
   goToLogin(){
     this.navCtrl.push(LoginPage);
+  }
+  gotoComplain(){
+    this.navCtrl.push(ComplaintsPage);
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
