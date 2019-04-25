@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>search_complaint</ion-title>
+    <ion-title>نتيجه البحث</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div class="list" *ngFor="let data of complaints">
 
+    <a class="item" href="#">
+      <h2>{{data.citizen_name}}</h2>
+      <p class="complaintcontent">{{data.complain_content}} </p>
+      <p>{{data.isProcessed}}</p>
+    </a>
+
+</div>
 </ion-content>

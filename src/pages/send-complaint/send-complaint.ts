@@ -36,7 +36,7 @@ export class SendComplaintPage {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiKey + 'api/makeComplain', { citizen_national_id:this.CustomerNationalID,complain_content:this.complaint })
+      this.http.post(apiKey + 'api/makeComplain', { citizen_national_id:this.CustomerNationalID,complain_content:this.complaint,citizen_name:this.Customername })
         .map(res => res.json())
         .subscribe(data => {
           console.log(data)
