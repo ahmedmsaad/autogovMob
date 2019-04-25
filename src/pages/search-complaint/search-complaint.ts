@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {SendComplaintPage} from '../send-complaint/send-complaint'
+
 /**
- * Generated class for the ComplaintsPage page.
+ * Generated class for the SearchComplaintPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,22 +10,16 @@ import {SendComplaintPage} from '../send-complaint/send-complaint'
 
 @IonicPage()
 @Component({
-  selector: 'page-complaints',
-  templateUrl: 'complaints.html',
+  selector: 'page-search-complaint',
+  templateUrl: 'search-complaint.html',
 })
-export class ComplaintsPage {
+export class SearchComplaintPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ComplaintsPage');
-  }
-  showResult(){
-    
-  }
-  gotocomplaintForm(){
-    this.navCtrl.push(SendComplaintPage)
+    console.log('ionViewDidLoad SearchComplaintPage');
   }
 
 }

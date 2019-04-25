@@ -23,6 +23,8 @@ import { DataProvider } from '../providers/data/data';
 import { FeesProvider } from '../providers/fees/fees';
 import { ReqinfoDataProvider } from '../providers/reqinfo-data/reqinfo-data';
 import {ComplaintsPage} from '../pages/complaints/complaints';
+import {SendComplaintPage} from '../pages/send-complaint/send-complaint'
+import {SearchComplaintPage} from '../pages/search-complaint/search-complaint';
 
 import { HttpModule } from '@angular/http'; 
 
@@ -39,7 +41,10 @@ import { HttpModule } from '@angular/http';
     DocumentsReqPage,
     FeesReqPage,
     ReqinfoDetailsPage,
-    ComplaintsPage
+    ComplaintsPage,
+    SendComplaintPage,
+    SearchComplaintPage
+    
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,9 @@ import { HttpModule } from '@angular/http';
     DocumentsReqPage,
     FeesReqPage,
     ReqinfoDetailsPage,
-    ComplaintsPage
+    ComplaintsPage,
+    SendComplaintPage,
+    SearchComplaintPage
   ],
   providers: [
     StatusBar,

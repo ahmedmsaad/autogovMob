@@ -1,4 +1,4 @@
-page-complaints {
+page-send-complaint {
     $background:white;
     .toolbar-background{
         background: none;
@@ -12,6 +12,12 @@ page-complaints {
         color: #3d507e;
         background: none;
     }
+    .item-md{
+        
+        margin-bottom: 10px;
+        padding: 0;
+
+    }
     .item .item-block .item-md .item-input .ng-pristine ng-valid ng-touched{
         height: 50px;
         background: none;
@@ -20,14 +26,13 @@ page-complaints {
 
     }
     .searchcontent{
-        display:flex;
-        background:none;
-        margin-top: 150px;
-        box-shadow: 0px 1px 15px 0px #bfc8f3;
+        display:grid;
+        background:white;
+       // margin-top: 150px;
+       // box-shadow: 0px 1px 15px 0px #bfc8f3;
         border-bottom: 1px solid #3d507e;
 
     }
-    
     .searchcontent button{
         background:#3d507e;
         color: white;
@@ -87,25 +92,9 @@ page-complaints {
         text-align: center;
         background-color: $background;
     }
-    .send{
-        height: auto;
-        color: #3d507e;
-        margin-top: 25px;
-        font-size: 25px;
-        background: none;
-        box-shadow: none;
-        padding: 0
-    }
-    .icons{
-        background: white;
-        padding: 10px;
-        margin: 10px;
-        border-radius: 4px;
-        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 2px 2px 3px 0px #8090df;
-        color: #889cff;
-        height:50px;
-        width: 50px;
-    }
-    
+
+
+}
+page-complaints:focus, page-complaints:active{
+    border: none
 }

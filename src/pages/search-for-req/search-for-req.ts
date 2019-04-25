@@ -37,6 +37,7 @@ export class SearchForReqPage {
       console.log(this.customer)
       
     })
+
   }
   getTrancationAndCustomer() {
     return new Promise((resolve, reject) => {
@@ -53,4 +54,5 @@ export class SearchForReqPage {
         });
     })
   }
+  
 }

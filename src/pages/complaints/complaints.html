@@ -26,21 +26,18 @@
 
   <div class="background1"></div>
   <div class="background2"></div>
+
+  <div class="searchcontent">
+    <button ion-button (click)="showResult()">بحث</button>
+  
+    <ion-item >
+      <ion-input placeholder="ادخل الرقم القومى" type="text" [(ngModel)]="CitizinNationalId" ></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-buttons end>
+    <button ion-button class="send" (click)="gotocomplaintForm()"> تقديم شكوى  <ion-icon class="icons" name="list-box"></ion-icon> </button>
+  </ion-buttons>
  
-    <span class="searchcontent">
-      <ion-item>
-        <ion-input placeholder="ادخل رقم القومى" type="text" [(ngModel)]="CustomerNationalID" name="firstField"></ion-input>
 
-      </ion-item>
-    </span>
-
-    <span>
-
-      <ion-item>
-        <ion-label floating></ion-label>
-        <ion-textarea rows="15" cols="20" placeholder="ادخل  الشكوى"></ion-textarea>
-      </ion-item>
-      <button ion-button (click)="showResult()">تقديم الشكوى</button>
-
-    </span>
 </ion-content>
