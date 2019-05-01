@@ -1,0 +1,99 @@
+page-complain-info {
+    $background:white;
+    .toolbar-background{
+        background: none;
+        
+    }
+    .my-label {
+        font-size: 1em;
+    }
+
+    
+    ion-title{
+        text-align: right;
+    }
+    .text-input-md {
+        text-align: right;
+        color: #3d507e;
+        background: none;
+    }
+    .item-md{
+        
+        padding: 0;
+
+    }
+    
+    .searchcontent{
+        display:grid;
+        background:white;
+        margin-bottom: 10px;
+       // margin-top: 150px;
+       // box-shadow: 0px 1px 15px 0px #bfc8f3;
+        border-bottom: 1px solid #3d507e;
+
+    }
+    .searchcontent button{
+        background:#3d507e;
+        color: white;
+        height: 50px;
+        width: 70px;
+
+    }
+    .Complaint{
+        display:flex;
+        background:none;
+        margin-top: 150px;
+        box-shadow: 0px 1px 15px 0px #bfc8f3;
+        border-bottom: 1px solid #3d507e;
+
+    }
+    .Complaint button{
+        background:#3d507e;
+        color: white;
+        height: 50px;
+        width: 70px;
+
+    }
+
+
+
+
+
+
+
+
+
+    .item-innert:focus,.item-inner:active{
+        border: none
+    }
+    .background1{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: -116%;
+        border-radius: 100%;
+        margin-top: -57%;
+        z-index: -10;
+    }
+    .background2{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: 53%;
+        border-radius: 100%;
+        margin-top: 30%;
+        z-index: -10;
+       
+    }
+    .pageContent{
+        text-align: center;
+        background-color: $background;
+    }
+
+
+}
+page-complaints:focus, page-complaints:active{
+    border: none
+}

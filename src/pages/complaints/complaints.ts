@@ -13,6 +13,7 @@ import {apiKey} from "../../app/apiurls/serverurls.js";
 import { Http , Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
+import { ComplainInfoPage } from '../complain-info/complain-info';
 
 @IonicPage()
 @Component({
@@ -29,8 +30,9 @@ export class ComplaintsPage {
     console.log('ionViewDidLoad ComplaintsPage');
   }
   showResult(){
+    console.log("have fun");
     console.log(this.CitizinNationalId);
-    this.getallComlaintsAndReplies().then((data) => {
+    this.getallComplaintsAndReplies().then((data) => {
       this.complaints_replies = data;
       this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies})
      // console.log(this.complaints_replies)
@@ -42,9 +44,13 @@ export class ComplaintsPage {
   gotocomplaintForm(){
     this.navCtrl.push(SendComplaintPage)
   }
+  gotoComplainInfoPage(){
+    this.navCtrl.push(ComplainInfoPage)
+  }
+  
 
 
-  getallComlaintsAndReplies(){
+  getallComplaintsAndReplies(){
     return new Promise((resolve, reject) => {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');

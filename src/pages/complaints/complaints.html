@@ -33,9 +33,13 @@
     <ion-item >
       <ion-input placeholder="ادخل الرقم القومى" type="text" [(ngModel)]="CitizinNationalId" ></ion-input>
     </ion-item>
+
+
   </div>
 
   <ion-buttons end>
+     <button ion-button class="send" (click)=" gotoComplainInfoPage()">new page   <ion-icon class="icons" name="list-box"></ion-icon> </button>
+
     <button ion-button class="send" (click)="gotocomplaintForm()"> تقديم شكوى  <ion-icon class="icons" name="list-box"></ion-icon> </button>
   </ion-buttons>
  

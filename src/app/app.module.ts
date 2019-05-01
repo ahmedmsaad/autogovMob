@@ -28,6 +28,8 @@ import {SearchComplaintPage} from '../pages/search-complaint/search-complaint';
 
 import { HttpModule } from '@angular/http'; 
 
+import{ComplainInfoPage} from '../pages/complain-info/complain-info'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +45,8 @@ import { HttpModule } from '@angular/http';
     ReqinfoDetailsPage,
     ComplaintsPage,
     SendComplaintPage,
-    SearchComplaintPage
+    SearchComplaintPage,
+    ComplainInfoPage
     
   ],
   imports: [
@@ -67,7 +70,8 @@ import { HttpModule } from '@angular/http';
     ReqinfoDetailsPage,
     ComplaintsPage,
     SendComplaintPage,
-    SearchComplaintPage
+    SearchComplaintPage,
+    ComplainInfoPage
   ],
   providers: [
     StatusBar,
