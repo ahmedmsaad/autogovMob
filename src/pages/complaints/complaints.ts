@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {SendComplaintPage} from '../send-complaint/send-complaint'
 import { SearchComplaintPage } from '../search-complaint/search-complaint';
+import { AlertController } from 'ionic-angular';
+
 /**
  * Generated class for the ComplaintsPage page.
  *
@@ -23,19 +25,29 @@ import { ComplainInfoPage } from '../complain-info/complain-info';
 export class ComplaintsPage {
   CitizinNationalId:any;
   complaints_replies:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComplaintsPage');
   }
   showResult(){
-    console.log("have fun");
     console.log(this.CitizinNationalId);
     this.getallComplaintsAndReplies().then((data) => {
       this.complaints_replies = data;
-      this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies})
-     // console.log(this.complaints_replies)
+      
+      if(this.complaints_replies[0].length==0){
+        console.log("is empty");
+        let alert = this.alertCtrl.create({
+          title: 'خطأ',
+          subTitle: 'لم يقم هذا الشخص بتقديم شكوى سابقاً',
+          buttons: ['اعاده المحاوله']
+        });
+        alert.present();
+      }else{
+        //console.log(this.complaints_replies[0].length)
+        this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies});
+      }
     })
     
      //console.log(this.complaints_replies)

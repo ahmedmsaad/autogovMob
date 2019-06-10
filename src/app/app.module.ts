@@ -25,7 +25,7 @@ import { ReqinfoDataProvider } from '../providers/reqinfo-data/reqinfo-data';
 import {ComplaintsPage} from '../pages/complaints/complaints';
 import {SendComplaintPage} from '../pages/send-complaint/send-complaint'
 import {SearchComplaintPage} from '../pages/search-complaint/search-complaint';
-
+import {ShortmessagePage} from '../pages/shortmessage/shortmessage'
 import { HttpModule } from '@angular/http'; 
 
 import{ComplainInfoPage} from '../pages/complain-info/complain-info'
@@ -46,7 +46,8 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     ComplaintsPage,
     SendComplaintPage,
     SearchComplaintPage,
-    ComplainInfoPage
+    ComplainInfoPage,
+    ShortmessagePage
     
   ],
   imports: [
@@ -71,7 +72,8 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     ComplaintsPage,
     SendComplaintPage,
     SearchComplaintPage,
-    ComplainInfoPage
+    ComplainInfoPage,
+    ShortmessagePage
   ],
   providers: [
     StatusBar,

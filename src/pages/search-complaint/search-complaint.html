@@ -16,10 +16,11 @@
 <ion-content padding>
   <div class="list" *ngFor="let data of complaints">
 
-    <a class="item" href="#">
+    <a class="item" href="#" (click)="gotocomplaint(data)">
       <h2>{{data.citizen_name}}</h2>
-      <p class="complaintcontent">{{data.complain_content}} </p>
-      <p>{{data.isProcessed}}</p>
+      <p class="complaintcontent" >...{{data.complain_content}}</p>
+      <p class="date">{{data.created_at}}</p>
+      <p class="isProcessed">{{data.isProcessed}}</p>
     </a>
 
 </div>

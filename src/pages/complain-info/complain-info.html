@@ -7,59 +7,26 @@
 <ion-header>
 
     <ion-navbar>
-      <ion-title>معلومات عن الشكوى المقدمة</ion-title>
+      <ion-title>الشكوى المقدمة</ion-title>
     </ion-navbar>
   
   </ion-header>
   
   
   <ion-content padding class="pageContent">
-      <ion-item  item-right text-right>
-      <ion-label item-right text-right>Input</ion-label>
-      <ion-input></ion-input>
-  
-    </ion-item>
-  
-         
-    <ion-item>
-        <ion-input placeholder="code" type="text"></ion-input>
-        <button ion-button color="light" item-end>اسم صاحب الشكوى </button>
-      </ion-item>
-  
-    <div class="background1"></div>
-    <div class="background2"></div>
-  
-      <span class="searchcontent">
-        
-          <ion-chip>
-              <ion-label class="my-label"  color="primary">Default</ion-label>
-            </ion-chip>
-  
-  
-        <ion-item>
-          <ion-label color="primary"item-right>اسم صاحب الشكوى</ion-label>
-          <ion-input placeholder="اسم صاحب الشكوى" type="text" [(ngModel)]="Customername" name="firstField" item-end></ion-input>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input placeholder="الشكوى" type="text" [(ngModel)]="ComplaintID" name="firstField"></ion-input>
-  
-        </ion-item>
-      </span>
-  
-  
-      <ion-chip #chip1>
-          <ion-label  color="primary">Default</ion-label>
-          <button ion-button clear color item-end="light" >
-              <ion-label>Default</ion-label>
-  
-          </button>
-        </ion-chip>
-        
-  
-  
-  
-    </ion-content>
+    <div class="complaint" href="#">
+      <h2>مقدمه من {{ComplaintAndReply.citizen_name}}</h2>
+      <p class="complaintcontent" >{{ComplaintAndReply.complain_content}}</p>
+      <p >{{ComplaintAndReply.created_at}}</p>
+    </div>
+
+    <div class="reply" href="#">
+      <h2 >الرد من </h2>
+        <p class="replycontent" >{{reply}}</p>
+        <p >{{replydate}}</p>
+
+    </div>
+  </ion-content>
   
   
   

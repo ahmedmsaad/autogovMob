@@ -1,68 +1,32 @@
 page-complain-info {
     $background:white;
-    .toolbar-background{
-        background: none;
-        
-    }
-    .my-label {
-        font-size: 1em;
-    }
-
-    
     ion-title{
         text-align: right;
     }
-    .text-input-md {
+    .complaint{
         text-align: right;
-        color: #3d507e;
-        background: none;
-    }
-    .item-md{
-        
-        padding: 0;
-
-    }
-    
-    .searchcontent{
-        display:grid;
-        background:white;
-        margin-bottom: 10px;
-       // margin-top: 150px;
-       // box-shadow: 0px 1px 15px 0px #bfc8f3;
+        padding-bottom: 10px;
         border-bottom: 1px solid #3d507e;
-
+        margin-top: 10px; 
     }
-    .searchcontent button{
-        background:#3d507e;
-        color: white;
-        height: 50px;
-        width: 70px;
-
-    }
-    .Complaint{
-        display:flex;
-        background:none;
-        margin-top: 150px;
-        box-shadow: 0px 1px 15px 0px #bfc8f3;
+    .reply{
+        text-align: right;
+        padding-bottom: 10px;
         border-bottom: 1px solid #3d507e;
-
+        margin-top: 10px; 
     }
-    .Complaint button{
-        background:#3d507e;
-        color: white;
-        height: 50px;
-        width: 70px;
-
+    a{
+        text-decoration: none;
+        color: black;
     }
-
-
-
-
-
-
-
-
-
+    .complaintcontent{
+        width: 95%;
+        margin: auto;
+    }
+    .replycontent{
+        width: 95%;
+        margin: auto;
+    }
     .item-innert:focus,.item-inner:active{
         border: none
     }
