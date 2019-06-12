@@ -32,9 +32,9 @@ export class SearchForReqPage {
   }
   showResult(){
     this.getTrancationAndCustomer().then((data)=>{
+      console.log(data);
       this.customer=data[0];
       this.transaction=data[1];
-      console.log(this.transaction.Canceled)
       if(this.transaction.Canceled==0){
         let alert = this.alertCtrl.create({
           subTitle: 'تم قبول الطلب'
@@ -54,6 +54,8 @@ export class SearchForReqPage {
         alert.present();
       }
   
+      
+      
     })
 
   }
@@ -68,6 +70,10 @@ export class SearchForReqPage {
           console.log(data)
           resolve(data);
         }, (err) => {
+          let alert = this.alertCtrl.create({
+            subTitle: 'تاكد من رقم المعامله'
+          });
+          alert.present(); 
           reject(err);
         });
     })
