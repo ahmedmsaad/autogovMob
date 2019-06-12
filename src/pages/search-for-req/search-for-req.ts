@@ -34,8 +34,26 @@ export class SearchForReqPage {
     this.getTrancationAndCustomer().then((data)=>{
       this.customer=data[0];
       this.transaction=data[1];
-      console.log(this.customer)
-      
+      console.log(this.transaction.Canceled)
+      if(this.transaction.Canceled==0){
+        let alert = this.alertCtrl.create({
+          subTitle: 'تم قبول الطلب'
+        });
+        alert.present();
+      }
+      else if(this.transaction.Canceled==1){
+        let alert = this.alertCtrl.create({
+          title:'تم رفض الطلب',
+          subTitle : this.transaction.Notes,
+        });
+        alert.present();
+      }else{
+        let alert = this.alertCtrl.create({
+          subTitle :'جارى فحص الطلب',
+        });
+        alert.present();
+      }
+  
     })
 
   }
