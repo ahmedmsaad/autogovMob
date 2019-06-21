@@ -24,7 +24,7 @@ export class WelcomePage {
   goToTransactions(){
     this.navCtrl.push(HomePage);
   }
-  goToLogin(){
+  goToLoginPage(){
     this.navCtrl.push(LoginPage);
   }
   gotoComplain(){

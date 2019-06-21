@@ -1,0 +1,37 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="list">
+      <label class="item item-input">
+          <span class="input-label"  >الاسم </span>
+          <input type="text" [(ngModel)]="name">
+        </label>
+    <label class="item item-input">
+      <span class="input-label"  >الرقم القومى</span>
+      <input type="text" [(ngModel)]="nationalId">
+    </label>
+    <label class="item item-input">
+      <span class="input-label" >الرقم السرى</span>
+      <input type="password"  [(ngModel)]="password">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">تأكيد الرقم السرى</span>
+      <input type="password"  [(ngModel)]="confirmPassword">
+    </label>
+    <button ion-button class="button" (click)="register()"> إنشاء  </button>
+    
+  </div>
+</ion-content>

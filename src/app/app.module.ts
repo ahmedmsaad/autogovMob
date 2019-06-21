@@ -14,8 +14,8 @@ import { SearchForReqPage } from '../pages/search-for-req/search-for-req';
 import {BuildingLicensePage} from '../pages/building-license/building-license';
 import {DocumentsReqPage}  from '../pages/documents-req/documents-req';
 import {FeesReqPage} from '../pages/fees-req/fees-req';
-import { ReqinfoDetailsPage } from '../pages/reqinfo-details/reqinfo-details';
-
+import {ReqinfoDetailsPage } from '../pages/reqinfo-details/reqinfo-details';
+import {RegisterPage} from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -47,7 +47,8 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     SendComplaintPage,
     SearchComplaintPage,
     ComplainInfoPage,
-    ShortmessagePage
+    ShortmessagePage,
+    RegisterPage
     
   ],
   imports: [
@@ -73,7 +74,8 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     SendComplaintPage,
     SearchComplaintPage,
     ComplainInfoPage,
-    ShortmessagePage
+    ShortmessagePage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

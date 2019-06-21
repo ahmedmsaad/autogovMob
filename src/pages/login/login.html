@@ -6,31 +6,25 @@
 -->
 <ion-header>
 
-  <ion-navbar >
-    <ion-title>Login</ion-title>
+  <ion-navbar>
+    <ion-title>login</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-    <ion-list>
-
-        <ion-item>
-          <ion-label>Username</ion-label>
-          <ion-input type="text"  [(ngModel)]="name"></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label>Password</ion-label>
-          <ion-input type="password"  [(ngModel)]="password"></ion-input>
-        </ion-item>
-      
-    </ion-list>
-      
-      <div padding>
-        <button block (click)="Login(name,password)">Sign In</button>
-      </div>
-
+  <div class="list">
+    <label class="item item-input">
+      <span class="input-label">اسم المستخدم/ رقم البطاقه</span>
+      <input type="text" [(ngModel)]="user">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">الرقم السرى</span>
+      <input type="password" [(ngModel)]="password">
+    </label>
+    <button ion-button class="button" (click)="Login()"> تسجيل دخول </button>
+    <button ion-button class="button" (click)="goToregister()"> إنشاء حساب  </button>
+    
+  </div>
 </ion-content>

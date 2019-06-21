@@ -32,10 +32,16 @@ export class SearchForReqPage {
   }
   showResult(){
     this.getTrancationAndCustomer().then((data)=>{
-      console.log(data);
-      this.customer=data[0];
-      this.transaction=data[1];
-      if(this.transaction.Canceled==0){
+    
+      this.transaction=data[0];
+      console.log(this.transaction);
+      if (this.transaction==null){
+        let alert = this.alertCtrl.create({
+          subTitle: 'تاكد من رقم المعامله'
+        });
+        alert.present(); 
+      }
+      else if(this.transaction.Canceled==0){
         let alert = this.alertCtrl.create({
           subTitle: 'تم قبول الطلب'
         });
@@ -64,16 +70,13 @@ export class SearchForReqPage {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiKey + 'api/transactions/fetchSec', { Instance_id: this.InstanceId })
+      this.http.post(apiKey + 'api/transactions/fetchSec', { id: this.InstanceId })
         .map(res => res.json())
         .subscribe(data => {
-          console.log(data)
+          //console.log(data)
           resolve(data);
         }, (err) => {
-          let alert = this.alertCtrl.create({
-            subTitle: 'تاكد من رقم المعامله'
-          });
-          alert.present(); 
+          
           reject(err);
         });
     })
