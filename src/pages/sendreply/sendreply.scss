@@ -1,0 +1,25 @@
+page-sendreply {
+    ion-title{
+        text-align: right;
+    }
+    .complaint{
+        text-align: right;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #3d507e;
+        margin-top: 10px; 
+    }
+    .reply{
+        text-align: right;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #3d507e;
+        margin-top: 10px; 
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .complaintcontent{
+        width: 95%;
+        margin: auto;
+    }
+}

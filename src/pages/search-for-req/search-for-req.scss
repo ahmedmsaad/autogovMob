@@ -1,5 +1,8 @@
 page-search-for-req {
     $background:white;
+    .items{
+        text-align: right
+    }
     .scroll-content{
         overflow:hidden;
     }
@@ -21,7 +24,7 @@ page-search-for-req {
     .searchcontent{
         display:flex;
         background:none;
-        margin-top: 150px;
+        margin-top: 20%;
         box-shadow: 0px 1px 15px 0px #bfc8f3;
         border-bottom: 1px solid #3d507e;
 

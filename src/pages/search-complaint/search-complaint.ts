@@ -25,10 +25,11 @@ export class SearchComplaintPage {
   replies:any;
   constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
     this.nationalID= navParams.get('national_id');
-    this.getallComplaints().then((data) => {
-      this.complaints_replies = data;
-      
-      if(this.complaints_replies[0].length==0){
+    console.log(this.nationalID);
+    this.getallComplaints(this.nationalID).then((data) => {
+      this.complaints = data[0];
+      console.log(data);
+      if(this.complaints.length==0){
         console.log("is empty");
         let alert = this.alertCtrl.create({
           subTitle: 'لم يقم هذا الشخص بتقديم شكوى سابقاً',
@@ -37,8 +38,9 @@ export class SearchComplaintPage {
         this.navCtrl.pop();
 
       }else{
-        //console.log(this.complaints_replies[0].length)
-        this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies});
+        console.log(this.complaints.length)
+
+        //this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies});
       }
     })
     
@@ -46,9 +48,9 @@ export class SearchComplaintPage {
   gotocomplaint(complaint){
     if(complaint.isProcessed==="لم يتم الرد حتى الآن"){
       let alert = this.alertCtrl.create({
-        title: 'خطأ',
+
         subTitle: 'لم يتم الرد حتى الآن حاول لاحقاً',
-        buttons: ['موافق']
+
       });
       alert.present();
     }else{
@@ -56,12 +58,12 @@ export class SearchComplaintPage {
       this.navCtrl.push(ComplainInfoPage,{complaint:complaint})
     }
   }
-  getallComplaints(){
+  getallComplaints(nat_id){
     return new Promise((resolve, reject) => {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiKey+'api/fetchComplainsAndReplies', {citizen_national_id:this.nationalID})
+      this.http.post(apiKey+'api/fetchComplainsAndReplies', {citizen_national_id:nat_id})
        .map(res => res.json())
        .subscribe(data => {
          resolve(data);
@@ -69,9 +71,6 @@ export class SearchComplaintPage {
          reject(err);
        }); 
     })
-}
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchComplaintPage');
   }
-
+  
 }

@@ -14,6 +14,7 @@ import { Http , Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
 import {WelcomePage} from '../welcome/welcome'
+import { CitizenPage } from '../citizen/citizen';
 
 
 @IonicPage()
@@ -48,7 +49,7 @@ export class SendComplaintPage {
               subTitle: 'تم إرسال الشكوى بنجاح',
             });
             alert.present();
-            this.navCtrl.setRoot(WelcomePage);
+            this.navCtrl.pop();
           }, (err) => {
             reject(err);
           });
@@ -56,7 +57,6 @@ export class SendComplaintPage {
     }else{
       let alert = this.alertCtrl.create({
         subTitle: 'تأكد من ادخال البيانات المطلوبه لتقديم الشكوى ',
-        buttons: ['موافق']
       });
       alert.present();
     }

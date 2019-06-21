@@ -24,6 +24,18 @@
       <ion-input placeholder="ادخل رقم المعاملة" type="text" [(ngModel)]="InstanceId" ></ion-input>
     </ion-item>
   </div>
+  <ion-list>
+      <p class="date">{{created_at}}</p>
+      <p class="date">{{firstMessage}} </p>
+      <ion-item  class="items" *ngFor="let form of forms">
+          <h2>{{form.form_name}}</h2>
+          <p class="complaintcontent" ></p>
+      </ion-item>
+      
+      <p class="date">{{shortMessage}}</p>
+      <p class="date">{{stop_Reasons}}</p>
+      <p class="date">{{updated_at}}</p>
+    </ion-list>
   
 </ion-content>
 

@@ -1,0 +1,60 @@
+page-complaindetails {
+    $background:white;
+    ion-title{
+        text-align: right;
+    }
+    .complaint{
+        text-align: right;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #3d507e;
+        margin-top: 10px; 
+    }
+    .reply{
+        text-align: right;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #3d507e;
+        margin-top: 10px; 
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .complaintcontent{
+        width: 95%;
+        margin: auto;
+    }
+    .replycontent{
+        width: 95%;
+        margin: auto;
+    }
+    .item-innert:focus,.item-inner:active{
+        border: none
+    }
+    .background1{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: -116%;
+        border-radius: 100%;
+        margin-top: -57%;
+        z-index: -10;
+    }
+    .background2{
+        position: absolute;
+        height: 132%;
+        width: 153%;
+        background-color: #f7f8fd;
+        margin-left: 53%;
+        border-radius: 100%;
+        margin-top: 30%;
+        z-index: -10;
+       
+    }
+    .pageContent{
+        text-align: center;
+        background-color: $background;
+    }
+
+
+}

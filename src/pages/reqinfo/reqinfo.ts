@@ -26,8 +26,10 @@ export class ReqinfoPage {
   mydata:any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.ListAllRequests().then((data) => {
-      this.mydata = data[1];
-      console.log(this.mydata)
+      this.mydata = data;
+      this.mydata = this.mydata.requests;
+      
+      console.log(this.mydata);
     })
   }
   //ionViewDidLoad() {

@@ -28,6 +28,9 @@ import {ComplaintsPage} from '../pages/complaints/complaints';
 import {SendComplaintPage} from '../pages/send-complaint/send-complaint'
 import {SearchComplaintPage} from '../pages/search-complaint/search-complaint';
 import {ShortmessagePage} from '../pages/shortmessage/shortmessage'
+import {SendreplyPage} from '../pages/sendreply/sendreply'
+import {ComplaindetailsPage } from '../pages/complaindetails/complaindetails'
+
 import { HttpModule } from '@angular/http'; 
 
 import{ComplainInfoPage} from '../pages/complain-info/complain-info'
@@ -53,7 +56,9 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     RegisterPage,
     CitizenPage,
     CitizenProfilePage,
-    UserPage
+    UserPage,
+    SendreplyPage,
+    ComplaindetailsPage
     
   ],
   imports: [
@@ -83,7 +88,9 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     RegisterPage,
     CitizenPage,
     CitizenProfilePage,
-    UserPage
+    UserPage,
+    SendreplyPage,
+    ComplaindetailsPage
   ],
   providers: [
     StatusBar,

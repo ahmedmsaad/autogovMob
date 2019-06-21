@@ -52,7 +52,7 @@ export class LoginPage {
             this.navCtrl.setRoot(CitizenPage,{citizen:data[0].citizen_national_id});
           }
           else{
-            this.navCtrl.setRoot(UserPage,{user:data[0].name});
+            this.navCtrl.setRoot(UserPage,{user:data[0].id});
           }
         }, (err) => {
           reject(err);

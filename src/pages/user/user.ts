@@ -5,6 +5,9 @@ import { AlertController } from 'ionic-angular';
 import {apiKey} from "../../app/apiurls/serverurls.js";
 import { Http , Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {SendreplyPage} from '../sendreply/sendreply'
+import { ComplaindetailsPage } from '../complaindetails/complaindetails';
+
 
 /**
  * Generated class for the UserPage page.
@@ -20,7 +23,12 @@ import 'rxjs/add/operator/map';
 })
 export class UserPage {
   complaints:any;
+  userid:any;
+  reply:any;
+
   constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
+    this.userid=navParams.get('user');
+   // console.log(this.userid);
     this.getallComplaints().then((data) => {
       this.complaints = data;
     })
@@ -42,13 +50,9 @@ export class UserPage {
   }
   gotocomplaint(complaint){
     if(complaint.isProcessed==="تم الرد"){
-      let alert = this.alertCtrl.create({
-        subTitle: 'تم الرد',
-      });
-      alert.present();
+      this.navCtrl.push(ComplaindetailsPage,{complaint:complaint,user:this.userid})
     }else{
-      console.log("done");
-      this.navCtrl.push(ComplainInfoPage,{complaint:complaint})
+      this.navCtrl.push(SendreplyPage,{complaint:complaint,user:this.userid})
     }
   }
 
