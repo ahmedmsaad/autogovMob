@@ -22,11 +22,11 @@ import {WelcomePage} from '../welcome/welcome'
   templateUrl: 'send-complaint.html',
 })
 export class SendComplaintPage {
-  Customername:string="";
   CustomerNationalID:any;
   complaint:string="";
   constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
-  
+    this.CustomerNationalID= navParams.get('national_id');
+
   }
 
   ionViewDidLoad() {
@@ -34,11 +34,11 @@ export class SendComplaintPage {
   }
   sendcomplaint() {
     console.log(this.CustomerNationalID);
-    if(this.CustomerNationalID!=null && this.complaint!=="" && this.Customername!=="" ){
+    if(this.complaint!=="" ){
       return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.post(apiKey + 'api/makeComplain', { citizen_national_id:this.CustomerNationalID,complain_content:this.complaint,citizen_name:this.Customername })
+        this.http.post(apiKey + 'api/makeComplain', { citizen_national_id:this.CustomerNationalID,complain_content:this.complaint })
           .map(res => res.json())
           .subscribe(data => {
             console.log(data)
@@ -55,7 +55,6 @@ export class SendComplaintPage {
       });
     }else{
       let alert = this.alertCtrl.create({
-        title: 'خطأ',
         subTitle: 'تأكد من ادخال البيانات المطلوبه لتقديم الشكوى ',
         buttons: ['موافق']
       });

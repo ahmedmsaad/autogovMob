@@ -1,0 +1,14 @@
+page-citizen-profile {
+    .list{
+        display: inline-grid;
+        width:100%;
+    }
+    .item{
+        margin: 10px;
+        display: inline-grid;
+    }
+    .text ,.password{
+        width: 90%;
+        margin: auto;
+    }
+}

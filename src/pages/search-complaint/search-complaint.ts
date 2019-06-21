@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ComplainInfoPage} from '../complain-info/complain-info'
 import { AlertController } from 'ionic-angular';
+import {apiKey} from "../../app/apiurls/serverurls.js";
+import { Http , Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the SearchComplaintPage page.
  *
@@ -17,12 +21,26 @@ import { AlertController } from 'ionic-angular';
 export class SearchComplaintPage {
   complaints_replies:any;
   complaints:any;
+  nationalID:any;
   replies:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
-    this.complaints_replies= navParams.get('complaints_replies');
-    console.log(this.complaints_replies);
-    this.complaints=this.complaints_replies[0];
-    this.replies=this.complaints_replies[1];
+  constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
+    this.nationalID= navParams.get('national_id');
+    this.getallComplaints().then((data) => {
+      this.complaints_replies = data;
+      
+      if(this.complaints_replies[0].length==0){
+        console.log("is empty");
+        let alert = this.alertCtrl.create({
+          subTitle: 'لم يقم هذا الشخص بتقديم شكوى سابقاً',
+        });
+        alert.present();
+        this.navCtrl.pop();
+
+      }else{
+        //console.log(this.complaints_replies[0].length)
+        this.navCtrl.push(SearchComplaintPage,{complaints_replies:this.complaints_replies});
+      }
+    })
     
   }
   gotocomplaint(complaint){
@@ -38,7 +56,20 @@ export class SearchComplaintPage {
       this.navCtrl.push(ComplainInfoPage,{complaint:complaint})
     }
   }
-  
+  getallComplaints(){
+    return new Promise((resolve, reject) => {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.post(apiKey+'api/fetchComplainsAndReplies', {citizen_national_id:this.nationalID})
+       .map(res => res.json())
+       .subscribe(data => {
+         resolve(data);
+       }, (err) => {
+         reject(err);
+       }); 
+    })
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchComplaintPage');
   }

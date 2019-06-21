@@ -1,0 +1,25 @@
+page-citizen {
+    .button{
+        height: auto;
+        color: #3d507e;
+        margin-top: 25px;
+        font-size: 25px;
+        background: none;
+        box-shadow: none;
+        padding: 0
+
+    }
+    .buttonsContainer{
+        margin-top:20%; 
+    }
+    .icon{
+        background: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 4px;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 2px 3px 0px #8090df;
+        color: #889cff
+    }
+
+}

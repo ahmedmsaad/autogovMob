@@ -1,0 +1,23 @@
+page-user {
+    ion-title{
+        text-align: right;
+    }
+    .list{
+        text-align: right;
+        border-bottom: 1px solid #3d507e;
+        margin-top: 10px; 
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .complaintcontent{
+        overflow: hidden;
+        width: 95%;
+        height: 17px;
+    }
+    .date{
+        margin: 10px;
+        text-align: left
+    }
+}

@@ -27,6 +27,7 @@ export class RegisterPage {
   register(){
     if(this.nationalId!=null && this.name!=null && this.password!=null && this.confirmPassword!=null ){
       if(this.nationalId.length!=14){
+  
         let alert = this.alertCtrl.create({
           subTitle: 'الرقم القومى غير صحيح',
         });
@@ -34,37 +35,40 @@ export class RegisterPage {
         return ;
       }
       else if(this.nationalId.length==14){
-        if(this.nationalId[0]>1 && this.nationalId[1]<=3){
+        if(this.nationalId[0]<=1 || this.nationalId[0]>3){
           let alert = this.alertCtrl.create({
             subTitle: 'الرقم القومى غير صحيح',
           });
           alert.present();
           return ;
-        }else{
-          for (let index = 0; index < 14; index++) {
-            if(this.nationalId[index]>=0 && this.nationalId[index]<=9 ){
-              continue;
-            }else{
-              let alert = this.alertCtrl.create({
-                subTitle: 'يجب ان يكون الرقم القومى ارقام فقط ',
-              });
-              alert.present();
-              return ;
-            }
-            
-          }
         }
-        
+        for (let index = 0; index < 14; index++) {
+          if(this.nationalId[index]>=0 && this.nationalId[index]<=9 ){
+            continue;
+          }else{
+            let alert = this.alertCtrl.create({
+              subTitle: 'يجب ان يكون الرقم القومى ارقام فقط ',
+            });
+            alert.present();
+            return ;
+          }
+          
+        }       
       }
       if(this.confirmPassword==this.password){
+        console.log("tes test");
         return new Promise((resolve, reject) => {
           let headers = new Headers();
           headers.append('Content-Type', 'application/json');
-          this.http.post(apiKey + 'api/citizen/insert', {})
+          this.http.post(apiKey + 'api/user/register', {name:this.nationalId,password:this.password,citizen_national_id:this.nationalId})
             .map(res => res.json())
             .subscribe(data => {
               console.log(data)
               resolve(data);
+              let alert = this.alertCtrl.create({
+                subTitle: 'تم تسجل حساب بنجاح ',
+              });
+              alert.present();
               this.navCtrl.setRoot(LoginPage);
             }, (err) => {
               reject(err);
