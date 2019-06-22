@@ -32,7 +32,7 @@ export class SearchComplaintPage {
       if(this.complaints.length==0){
         console.log("is empty");
         let alert = this.alertCtrl.create({
-          subTitle: 'لم يقم هذا الشخص بتقديم شكوى سابقاً',
+          subTitle: 'لم تقم بتقديم شكوى سابقاً',
         });
         alert.present();
         this.navCtrl.pop();

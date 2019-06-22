@@ -7,6 +7,7 @@ import { Http , Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {SendreplyPage} from '../sendreply/sendreply'
 import { ComplaindetailsPage } from '../complaindetails/complaindetails';
+import { WelcomePage } from '../welcome/welcome';
 
 
 /**
@@ -54,6 +55,9 @@ export class UserPage {
     }else{
       this.navCtrl.push(SendreplyPage,{complaint:complaint,user:this.userid})
     }
+  }
+  logout(){
+    this.navCtrl.setRoot(WelcomePage);
   }
 
 }

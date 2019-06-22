@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
 import {WelcomePage} from '../welcome/welcome'
 import { AlertController } from 'ionic-angular';
+import { Camera,CameraOptions } from '@ionic-native/camera/ngx';
 
 /**
  * Generated class for the SendreplyPage page.
@@ -23,7 +24,9 @@ export class SendreplyPage {
   Complaint:any;
   reply:any;
   userid:any;
-  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
+  image:any;
+  
+  constructor(private camera:Camera, private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.Complaint=navParams.get('complaint');
     this.userid=navParams.get('user');
    console.log(this.userid);
@@ -58,5 +61,21 @@ export class SendreplyPage {
           alert.present();
         }
       /**/
+  }
+  getCamera(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     this.image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
   }
 }

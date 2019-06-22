@@ -25,7 +25,11 @@
         <ion-label floating></ion-label>
         <ion-textarea rows="15" cols="20" placeholder="ادخل  الشكوى" [(ngModel)]="complaint"></ion-textarea>
       </ion-item>
+      <ion-buttons>
+        <button ion-button class="button" (click)="getCamera()"> إضافه صوره  <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon></button>
+      </ion-buttons>
+      <p><img src="{{image}}"/></p>
       <button ion-button (click)="sendcomplaint()">تقديم الشكوى</button>
-
+     
     </span>
 </ion-content>

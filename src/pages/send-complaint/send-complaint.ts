@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Camera,CameraOptions } from '@ionic-native/camera/ngx';
 
 /**
  * Generated class for the SendComplaintPage page.
@@ -25,7 +26,8 @@ import { CitizenPage } from '../citizen/citizen';
 export class SendComplaintPage {
   CustomerNationalID:any;
   complaint:string="";
-  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
+  image:any;
+  constructor(private camera:Camera, private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.CustomerNationalID= navParams.get('national_id');
 
   }
@@ -61,5 +63,21 @@ export class SendComplaintPage {
       alert.present();
     }
    /**/
+  }
+  getCamera(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     this.image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
   }
 }

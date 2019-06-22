@@ -4,6 +4,7 @@ import { CitizenProfilePage } from '../citizen-profile/citizen-profile';
 import { ComplaintsPage } from '../complaints/complaints';
 import { SendComplaintPage } from '../send-complaint/send-complaint';
 import { SearchComplaintPage } from '../search-complaint/search-complaint';
+import { WelcomePage } from '../welcome/welcome';
 
 /**
  * Generated class for the CitizenPage page.
@@ -31,5 +32,7 @@ export class CitizenPage {
   goTocomplaints(){
     this.navCtrl.push(SearchComplaintPage,{national_id:this.citizen_national_id});
   }
-
+  logout(){
+    this.navCtrl.setRoot(WelcomePage);
+  }
 }

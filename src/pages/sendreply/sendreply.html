@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>sendreply</ion-title>
+    <ion-title> الرد على الشكوى </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,7 @@
 
 <ion-content padding class="pageContent">
     <div class="complaint" href="#">
-      <h2>مقدمه من {{Complaint.citizen_name}}</h2>
+      <h2>مقدمه من {{Complaint.citizen_national_id}}</h2>
       <p class="complaintcontent" >{{Complaint.complain_content}}</p>
       <p >{{Complaint.created_at}}</p>
     </div>
@@ -26,6 +26,10 @@
         <ion-label floating></ion-label>
         <ion-textarea rows="15" cols="20" placeholder="اكتب الرد " [(ngModel)]="reply"></ion-textarea>
       </ion-item>
+      <ion-buttons end>
+        <button ion-button class="button" (click)="getCamera()"> إضافه صوره  <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon></button>
+      </ion-buttons>
+      <p><img src="{{image}}"/></p>
       <button ion-button (click)="sendreply()"> إرسال الرد  </button>
 
     </span>

@@ -12,6 +12,9 @@ page-citizen {
     .buttonsContainer{
         margin-top:20%; 
     }
+    .citizen{
+        display: inline-flex;
+    }
     .icon{
         background: white;
         padding: 10px;
@@ -21,5 +24,11 @@ page-citizen {
         box-shadow: 2px 2px 3px 0px #8090df;
         color: #889cff
     }
-
+    ion-title{
+        text-align: right;
+    }
+    .logout{
+        background: none;
+        margin-top: 0;
+    }
 }

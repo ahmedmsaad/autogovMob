@@ -21,9 +21,15 @@ export class ComplainInfoPage {
   ComplaintAndReply:any;
   reply:any;
   replydate:any;
+  userid:any;
+  username:any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.ComplaintAndReply=navParams.get('complaint');
    // console.log(this.ComplaintAndReply);
+   this.getUser().then((data) => {
+    this.username=data[0].name;
+    console.log(this.username.name);
+  })
     this.getReply().then((data) => {
       this.reply = data[0].reply_content;
       this.replydate= data[0].created_at;
@@ -36,6 +42,20 @@ export class ComplainInfoPage {
       headers.append('Content-Type', 'application/json');
 
       this.http.post(apiKey+'api/getReplies', {complain_id:this.ComplaintAndReply.id})
+       .map(res => res.json())
+       .subscribe(data => {
+         resolve(data);
+       }, (err) => {
+         reject(err);
+       }); 
+    })
+  }
+  getUser(){
+    return new Promise((resolve, reject) => {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.post(apiKey+'api/getuser', {id:this.userid})
        .map(res => res.json())
        .subscribe(data => {
          resolve(data);

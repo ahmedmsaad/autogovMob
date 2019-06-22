@@ -25,16 +25,17 @@ export class ComplaindetailsPage {
   replydate:any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.ComplaintAndReply=navParams.get('complaint');
-    this.userid=navParams.get('user');
-    this.getUser().then((data) => {
-      this.username=data[0].name;
-      console.log(this.username.name);
-    })
    
     this.getReply().then((data) => {
       this.reply = data[0].reply_content;
       this.replydate= data[0].created_at;
       console.log(this.reply);
+      this.userid= data[0].user_id;
+
+    })
+    this.getUser().then((data) => {
+    this.username=data[0].name;
+    console.log(this.username.name);
     })
   }
   getReply(){

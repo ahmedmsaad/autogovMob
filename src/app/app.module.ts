@@ -34,7 +34,7 @@ import {ComplaindetailsPage } from '../pages/complaindetails/complaindetails'
 import { HttpModule } from '@angular/http'; 
 
 import{ComplainInfoPage} from '../pages/complain-info/complain-info'
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 @NgModule({
   declarations: [
     MyApp,
@@ -98,7 +98,8 @@ import{ComplainInfoPage} from '../pages/complain-info/complain-info'
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     FeesProvider,
-    ReqinfoDataProvider
+    ReqinfoDataProvider,
+    Camera
   ]
 })
 export class AppModule {}

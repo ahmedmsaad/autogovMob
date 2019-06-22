@@ -4,10 +4,11 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="citizen">
+  <button ion-button class="logout" (click)="logout()"><ion-icon class="icon" name="log-out"></ion-icon> </button>
 
   <ion-navbar>
-    <ion-title>citizen</ion-title>
+    <ion-title >{{citizen_national_id}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,10 +17,10 @@
 <ion-content padding>
   <div class="buttonsContainer">
     <ion-buttons end>
-      <button ion-button class="button" (click)="goToprofile()">  الصفحه الشخصيه   <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon> </button>
+      <button ion-button class="button" (click)="goToprofile()">  الصفحه الشخصيه   <ion-icon class="icon" name="home"></ion-icon> </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button class="button" (click)="goTosendcomplaint()">  تقديم شكوى <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon> </button>
+      <button ion-button class="button" (click)="goTosendcomplaint()">  تقديم شكوى <ion-icon class="icon" name="send"></ion-icon> </button>
     </ion-buttons>
     <ion-buttons end>
         <button ion-button class="button" (click)="goTocomplaints()">  الشكاوى <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon> </button>

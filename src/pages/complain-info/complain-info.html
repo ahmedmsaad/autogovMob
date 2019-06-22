@@ -15,15 +15,14 @@
   
   <ion-content padding class="pageContent">
     <div class="complaint" href="#">
-      <h2>مقدمه من {{ComplaintAndReply.citizen_name}}</h2>
       <p class="complaintcontent" >{{ComplaintAndReply.complain_content}}</p>
       <p >{{ComplaintAndReply.created_at}}</p>
     </div>
 
     <div class="reply" href="#">
-      <h2 >الرد من </h2>
-        <p class="replycontent" >{{reply}}</p>
-        <p >{{replydate}}</p>
+      <h2 > الرد:  {{username}}  </h2>
+      <p class="replycontent" >{{reply}}</p>
+      <p >{{replydate}}</p>
 
     </div>
   </ion-content>

@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { ComplaintsPage } from '../complaints/complaints';
+import { Camera,CameraOptions } from '@ionic-native/camera/ngx';
 
 /**
  * Generated class for the WelcomePage page.
@@ -18,8 +19,8 @@ import { ComplaintsPage } from '../complaints/complaints';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  image:any;
+  constructor(private camera: Camera,public navCtrl: NavController, public navParams: NavParams) {
   }
   goToTransactions(){
     this.navCtrl.push(HomePage);
@@ -29,11 +30,6 @@ export class WelcomePage {
   }
   gotoComplain(){
     this.navCtrl.push(ComplaintsPage);
-
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
   }
   
-
 }
