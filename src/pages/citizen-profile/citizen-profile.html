@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>citizenProfile</ion-title>
+    <ion-title>البيانات الشخصيه</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,11 +25,12 @@
         </label>
         <ion-list>
             <ion-item>
-              <ion-label>النوع</ion-label>
               <ion-select [(ngModel)]="sex"  okText="حفظ">
                 <ion-option value="male" selected="true">ذكر</ion-option>
                 <ion-option value="femal">انثى</ion-option>
-                 </ion-select>
+              </ion-select>
+              <ion-label>النوع</ion-label>
+            
             </ion-item>
         </ion-list>
         <label class="item item-input">

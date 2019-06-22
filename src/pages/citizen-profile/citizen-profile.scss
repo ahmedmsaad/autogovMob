@@ -1,14 +1,27 @@
 page-citizen-profile {
+    ion-title{
+        text-align: right;
+    }
     .list{
+        text-align: right;
         display: inline-grid;
         width:100%;
+        font-size: 1.5em
     }
     .item{
-        margin: 10px;
+        text-align: right;
+        margin: 20px;
         display: inline-grid;
     }
-    .text ,.password{
+    .select-text{
+        width: 300px;
+        text-align: right;
+    }
+    .text ,.password,input{
+        text-align: right;
         width: 90%;
         margin: auto;
+        border-bottom: 1px solid;
+        margin-top: 10px;
     }
 }

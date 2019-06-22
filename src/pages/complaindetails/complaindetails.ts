@@ -31,12 +31,12 @@ export class ComplaindetailsPage {
       this.replydate= data[0].created_at;
       console.log(this.reply);
       this.userid= data[0].user_id;
-
+      this.getUser().then((data) => {
+        this.username=data[0].name;
+        console.log(this.username.name);
+        })
     })
-    this.getUser().then((data) => {
-    this.username=data[0].name;
-    console.log(this.username.name);
-    })
+    
   }
   getReply(){
     return new Promise((resolve, reject) => {
