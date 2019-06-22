@@ -28,7 +28,9 @@
       <ion-buttons>
         <button ion-button class="button" (click)="getCamera()"> إضافه صوره  <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon></button>
       </ion-buttons>
-      <p><img src="{{image}}"/></p>
+    
+     <!-- <input class="button" type="file" (change)="onFileChanged($event)">
+      <img src="{{image}}" *ngIf="image" alt="Ionic File" width="300" />-->
       <button ion-button (click)="sendcomplaint()">تقديم الشكوى</button>
      
     </span>
