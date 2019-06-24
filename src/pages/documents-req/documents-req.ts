@@ -27,6 +27,7 @@ export class DocumentsReqPage {
     console.log(this.requestid)
     this.ListDocOfReqByID().then((data) => {
       this.documents = data;
+      this.documents=this.documents.documents;
       console.log(this.documents)
     })
   }
@@ -36,7 +37,7 @@ export class DocumentsReqPage {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiKey+'api/documentsByReqId/get', {id:this.requestid})
+      this.http.get(apiKey+'api/documents/get/'+this.requestid)
        .map(res => res.json())
        .subscribe(data => {
          resolve(data);

@@ -23,8 +23,12 @@ export class ComplaindetailsPage {
   userid:any;
   username:any;
   replydate:any;
+  Complaintimage:any;
+  replyimage:any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.ComplaintAndReply=navParams.get('complaint');
+    this.Complaintimage=apiKey+'api/getImageComplain/'+this.ComplaintAndReply.id;
+   this.replyimage=apiKey+'api/getImageReply/'+this.ComplaintAndReply.id;
    
     this.getReply().then((data) => {
       this.reply = data[0].reply_content;

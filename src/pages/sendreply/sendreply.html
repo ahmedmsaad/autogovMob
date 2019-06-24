@@ -18,18 +18,22 @@
       <h2>مقدمه من {{Complaint.citizen_national_id}}</h2>
       <p class="complaintcontent" >{{Complaint.complain_content}}</p>
       <p >{{Complaint.created_at}}</p>
+      <img [src]="Complaintimage" height="100" *ngIf="Complaintimage">
+
+
     </div>
 
     <span>
 
       <ion-item>
         <ion-label floating></ion-label>
-        <ion-textarea rows="15" cols="20" placeholder="اكتب الرد " [(ngModel)]="reply"></ion-textarea>
+        <ion-textarea rows="10" cols="20" placeholder="اكتب الرد " [(ngModel)]="reply"></ion-textarea>
       </ion-item>
-      <ion-buttons end>
-        <button ion-button class="button" (click)="getCamera()"> إضافه صوره  <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon></button>
-      </ion-buttons>
-      <p><img src="{{image}}"/></p>
+      <div style="text-align:center">
+        <input type="file" #fileupload [(ngModel)]="myFile" name="myFile" (change)="fileEvent($event)"/>
+      </div>
+      <img [src]="imgURL" height="200" *ngIf="imgURL">
+
       <button ion-button (click)="sendreply()"> إرسال الرد  </button>
 
     </span>

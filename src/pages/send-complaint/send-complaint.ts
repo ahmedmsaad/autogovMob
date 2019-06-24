@@ -27,21 +27,47 @@ export class SendComplaintPage {
   CustomerNationalID:any;
   complaint:string="";
   image:any;
+
+  selectedFile: File
+  
+  public imagePath;
+  imgURL: any;
+  public message: string;
+ 
+
+  title = 'angularlaraveluploadimage';
+  filedata:File;
+    fileEvent(e){
+        this.filedata = e.target.files[0];
+        var reader = new FileReader();
+        this.imagePath = e.target.files;
+        reader.readAsDataURL(e.target.files[0]); 
+        reader.onload = (_event) => { 
+          this.imgURL = reader.result; 
+        }
+
+        
+    }
+
   constructor(private camera:Camera, private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.CustomerNationalID= navParams.get('national_id');
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SendComplaintPage');
-  }
   sendcomplaint() {
-    console.log(this.CustomerNationalID);
+    console.log(this.filedata);
     if(this.complaint!=="" ){
       return new Promise((resolve, reject) => {
         let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        this.http.post(apiKey + 'api/makeComplain', { citizen_national_id:this.CustomerNationalID,complain_content:this.complaint })
+        var myFormData = new FormData();
+
+        headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Accept', 'application/json');
+        myFormData.append('filefield', this.filedata);
+        myFormData.append('citizen_national_id', this.CustomerNationalID);
+        myFormData.append('complain_content', this.complaint);
+
+        this.http.post(apiKey + 'api/makeComplain',myFormData)
           .map(res => res.json())
           .subscribe(data => {
             console.log(data)
@@ -62,22 +88,6 @@ export class SendComplaintPage {
       });
       alert.present();
     }
-   /**/
-  }
-  getCamera(){
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     this.image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-     // Handle error
-    });
+   
   }
 }

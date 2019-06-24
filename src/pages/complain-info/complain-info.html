@@ -16,13 +16,16 @@
   <ion-content padding class="pageContent">
     <div class="complaint" href="#">
       <p class="complaintcontent" >{{ComplaintAndReply.complain_content}}</p>
+      <img [src]="Complaintimage" height="200" *ngIf="Complaintimage">
       <p >{{ComplaintAndReply.created_at}}</p>
     </div>
 
     <div class="reply" href="#">
       <h2 > الرد:  {{username}}  </h2>
       <p class="replycontent" >{{reply}}</p>
+      <img [src]="replyimage" height="200" *ngIf="Complaintimage">
       <p >{{replydate}}</p>
+
 
     </div>
   </ion-content>

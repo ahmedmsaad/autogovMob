@@ -17,12 +17,16 @@
     <div class="complaint" href="#">
       <h2>مقدمه من {{ComplaintAndReply.citizen_national_id}}</h2>     
       <p class="complaintcontent" >{{ComplaintAndReply.complain_content}}</p>
+      <img [src]="Complaintimage" height="200" *ngIf="Complaintimage">
+      
       <p >{{ComplaintAndReply.created_at}}</p>
     </div>
 
     <div class="reply" href="#">
       <h2 > اسم الموظف:  {{username}}  </h2>
         <p class="replycontent" >{{reply}}</p>
+        <img [src]="replyimage" height="200" *ngIf="Complaintimage">
+      
         <p >{{replydate}}</p>
 
     </div>

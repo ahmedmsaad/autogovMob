@@ -25,13 +25,12 @@
         <ion-label floating></ion-label>
         <ion-textarea rows="15" cols="20" placeholder="ادخل  الشكوى" [(ngModel)]="complaint"></ion-textarea>
       </ion-item>
-      <ion-buttons>
-        <button ion-button class="button" (click)="getCamera()"> إضافه صوره  <ion-icon class="icon" ios="ios-list-box-outline" md="md-list-box"></ion-icon></button>
-      </ion-buttons>
     
-     <!-- <input class="button" type="file" (change)="onFileChanged($event)">
-      <img src="{{image}}" *ngIf="image" alt="Ionic File" width="300" />-->
+      <div style="text-align:center">
+        <input type="file" #fileupload [(ngModel)]="myFile" name="myFile" (change)="fileEvent($event)"/>
+      </div>
+      <img [src]="imgURL" height="200" *ngIf="imgURL">
       <button ion-button (click)="sendcomplaint()">تقديم الشكوى</button>
-     
+      
     </span>
 </ion-content>

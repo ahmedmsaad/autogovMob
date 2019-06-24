@@ -24,24 +24,48 @@ export class SendreplyPage {
   Complaint:any;
   reply:any;
   userid:any;
-  image:any;
+  Complaintimage:any;
   
+  public imagePath;
+  imgURL:any;
+  public message: string;
+  imgUR:any;
+  filedata:File;
   constructor(private camera:Camera, private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams ,public storage: Storage , public http: Http) {
     this.Complaint=navParams.get('complaint');
     this.userid=navParams.get('user');
-   console.log(this.userid);
+    this.Complaintimage=apiKey+'api/getImageComplain/'+this.Complaint.id;
+  }
+  
+    fileEvent(e){
+        this.filedata = e.target.files[0];
+        var reader = new FileReader();
+        this.imagePath = e.target.files;
+        reader.readAsDataURL(e.target.files[0]); 
+        reader.onload = (_event) => { 
+          this.imgURL = reader.result; 
+        }
 
-   }
+        
+    }
   sendreply(){
 
         if(this.reply!=null ){
           return new Promise((resolve, reject) => {
             let headers = new Headers();
-            headers.append('Content-Type', 'application/json');
-            this.http.post(apiKey + 'api/makeRep', { user_id:this.userid,reply_content:this.reply,complain_id:this.Complaint.id })
+            var myFormData = new FormData();
+
+            headers.append('Content-Type', 'multipart/form-data');
+            headers.append('Accept', 'application/json');
+            myFormData.append('filefield', this.filedata);
+            myFormData.append('user_id', this.userid);
+            myFormData.append('reply_content', this.reply);
+            myFormData.append('complain_id', this.Complaint.id );
+
+            this.http.post(apiKey + 'api/makeRep', myFormData)
               .map(res => res.json())
               .subscribe(data => {
-               console.log(data+"    "+"تالباللبيلابءي")
+             
                 resolve(data);
                 let alert = this.alertCtrl.create({
                   
@@ -62,20 +86,17 @@ export class SendreplyPage {
         }
       /**/
   }
-  getCamera(){
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     this.image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-     // Handle error
-    });
+  getimage(){
+    return new Promise((resolve, reject) => {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.get(apiKey+'api/getImageComplain/'+this.Complaint.id)
+       .subscribe(data => {
+         resolve(data);
+       }, (err) => {
+         reject(err);
+       }); 
+    })
   }
 }
